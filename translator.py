@@ -236,7 +236,7 @@ def readLangs(lang2, lang1='eng', reverse=False):
 # earlier).
 #
 
-MAX_LENGTH = 10
+MAX_LENGTH = 43
 
 eng_prefixes = (
     "i am ", "i m ",
@@ -250,8 +250,7 @@ eng_prefixes = (
 
 def filterPair(p):
     return len(p[0].split(' ')) < MAX_LENGTH and \
-        len(p[1].split(' ')) < MAX_LENGTH and \
-        p[1].startswith(eng_prefixes)
+        len(p[1].split(' ')) < MAX_LENGTH
 
 
 def filterPairs(pairs):
@@ -281,7 +280,7 @@ def prepareData(lang1, lang2, reverse=False):
     return input_lang, output_lang, pairs
 
 
-input_lang, output_lang, pairs = prepareData('eng', 'fra', True)
+input_lang, output_lang, pairs = prepareData('por', True)
 print(random.choice(pairs))
 
 
